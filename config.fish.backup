@@ -1,0 +1,14 @@
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+zoxide init fish | source
+
+function nvm
+   bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
+end
+
+set -x NVM_DIR ~/.nvm
+nvm use default --silent
+set PATH /Users/angelo/.nvm/versions/node/v16.16.0/bin  $PATH
+
+export ANDROID_HOME=/Users/angelo/Library/Android/sdk
